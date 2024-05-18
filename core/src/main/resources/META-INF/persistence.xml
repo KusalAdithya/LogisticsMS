@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
-    <persistence-unit name="WebPU" transaction-type="JTA">
+    <persistence-unit name="WebPUW" transaction-type="JTA">
 
         <jta-data-source>jdbc/logistics_db</jta-data-source>
         <class>com.waka.entity.User</class>
