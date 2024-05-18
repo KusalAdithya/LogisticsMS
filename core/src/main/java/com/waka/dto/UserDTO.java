@@ -4,17 +4,17 @@ public class UserDTO {
     private Long id;
     private String name;
     private String username;
-    private String contactNumber;
+    private String mobileNumber;
     private String password;
 
     public UserDTO() {
     }
 
-    public UserDTO(Long id, String name, String username, String contactNumber, String password) {
+    public UserDTO(Long id, String name, String username, String mobileNumber, String password) {
         this.id = id;
         this.name = name;
         this.username = username;
-        this.contactNumber = contactNumber;
+        this.mobileNumber = mobileNumber;
         this.password = password;
     }
 
@@ -42,12 +42,12 @@ public class UserDTO {
         this.username = username;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
+    public String getMobileNumber() {
+        return mobileNumber;
     }
 
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+    public void setMobileNumber(String contactNumber) {
+        this.mobileNumber = contactNumber;
     }
 
     public String getPassword() {

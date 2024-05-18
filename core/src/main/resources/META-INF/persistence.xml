@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
-    <persistence-unit name="WebPUW" transaction-type="JTA">
+    <persistence-unit name="logisticsPU" transaction-type="JTA">
 
         <jta-data-source>jdbc/logistics_db</jta-data-source>
         <class>com.waka.entity.User</class>
@@ -12,4 +12,17 @@
 
         <shared-cache-mode>DISABLE_SELECTIVE</shared-cache-mode>
     </persistence-unit>
+<!--<persistence-unit name="WebPU" transaction-type="JTA">-->
+
+<!--    <jta-data-source>jdbc/logistics_db</jta-data-source>-->
+<!--    <class>com.waka.entity.User</class>-->
+<!--    <class>com.waka.entity.UserType</class>-->
+
+<!--    <properties>-->
+<!--        <property name="jakarta.persistence.schema-generation.database.action" value="create"/>-->
+<!--    </properties>-->
+
+<!--    <shared-cache-mode>DISABLE_SELECTIVE</shared-cache-mode>-->
+
+<!--</persistence-unit>-->
 </persistence>

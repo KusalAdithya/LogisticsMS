@@ -7,7 +7,4 @@ import jakarta.persistence.PersistenceContext;
 @Stateless
 public class Main {
 
-    @PersistenceContext(name = "WebPUW")
-    private EntityManager em;
-
 }

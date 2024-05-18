@@ -20,33 +20,33 @@
         <form action="https://httpbin.org/post" method="POST" class="form login mt-3">
 
             <div class="form__field">
-                <label for="login__name"><svg class="icon">
+                <label for="signup__name"><svg class="icon">
                     <use xlink:href="#icon-user"></use>
                 </svg><span class="hidden">Name</span></label>
-                <input autocomplete="username" id="login__name" type="text" name="username" class="form__input" placeholder="Name" required>
+                <input autocomplete="username" id="signup__name" type="text" name="username" class="form__input" placeholder="Name" required>
             </div>
 
             <div class="form__field">
-                <label for="login__mobile"><i class="bi bi-phone-fill"></i><span class="hidden">Mobile Number</span></label>
-                <input id="login__mobile" type="text" class="form__input" placeholder="Mobile Number" required>
+                <label for="signup__mobile"><i class="bi bi-phone-fill"></i><span class="hidden">Mobile Number</span></label>
+                <input id="signup__mobile" type="text" class="form__input" placeholder="Mobile Number" required>
             </div>
 
             <div class="form__field">
-                <label for="login__username"><svg class="icon">
+                <label for="signup__username"><svg class="icon">
                     <use xlink:href="#icon-user"></use>
                 </svg><span class="hidden">Username</span></label>
-                <input autocomplete="username" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
+                <input autocomplete="username" id="signup__username" type="text" name="username" class="form__input" placeholder="Username" required>
             </div>
 
             <div class="form__field">
-                <label for="login__password"><svg class="icon">
+                <label for="signup__password"><svg class="icon">
                     <use xlink:href="#icon-lock"></use>
                 </svg><span class="hidden">Password</span></label>
-                <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+                <input id="signup__password" type="password" name="password" class="form__input" placeholder="Password" required>
             </div>
 
             <div class="form__field">
-                <input type="submit" value="Sign Up">
+                <input type="submit" value="Sign Up" onclick="signUp()">
             </div>
 
         </form>

@@ -78,3 +78,49 @@ function signIn() {
     // )
 }
 // signin end-----------------------------------------------------------------------------------------------------------
+
+// signup ----------------------------------------------------------------------------------------------------
+function signUp() {
+
+    let name = document.getElementById("signup__name");
+    let mobile = document.getElementById("signup__mobile");
+    let email = document.getElementById("signup__username");
+    let password = document.getElementById("signup__password");
+
+    alert(name.value + " " + mobile.value + " " + email.value + " " + password.value);
+
+    // fetch('sign-up', {
+    //     method: 'post',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         name: name.value,
+    //         contactNumber: mobile.value,
+    //         username: email.value,
+    //         password: password.value,
+    //     })
+    // }).then(
+    //     response => {
+    //         if (response.status == 200) {
+    //             return response.text();
+    //         } else {
+    //             alert("Registration Failed! Please try again.");
+    //             throw new Error("Registration Failed! Please try again.");
+    //         }
+    //     }
+    // ).then(
+    //     text => {
+    //
+    //         alert(text);
+    //
+    //         name.value = "";
+    //         mobile.value = "";
+    //         email.value = "";
+    //         password.value = "";
+    //
+    //     }
+    // )
+
+}
+// signup end----------------------------------------------------------------------------------------------------

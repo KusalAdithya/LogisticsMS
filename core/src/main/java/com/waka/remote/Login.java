@@ -1,8 +1,9 @@
 package com.waka.remote;
 
+import com.waka.entity.User;
 import jakarta.ejb.Remote;
 
 @Remote
 public interface Login {
-    boolean login(String username, String password);
+    User login(String username, String password);
 }
