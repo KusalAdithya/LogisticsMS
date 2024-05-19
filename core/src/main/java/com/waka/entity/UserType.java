@@ -3,13 +3,14 @@ package com.waka.entity;
 import jakarta.persistence.Cacheable;
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Cacheable
 @Entity
 @Table(name = "user_type")
-public class UserType {
+public class UserType implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

@@ -1,25 +1,25 @@
-
 // function tracking(){
-    var prev = document.getElementById('prev');
-    var next = document.getElementById('next');
-    var trak = document.getElementById('progress');
-    var step = document.getElementById('step');
+var prev = document.getElementById('prev');
+var next = document.getElementById('next');
+var trak = document.getElementById('progress');
+var step = document.getElementById('step');
 
-    next.addEventListener('click', function(){
-        var cls = trak.className.split('-').pop();
-        cls > 6 ? cls = 0 : cls++;
+next.addEventListener('click', function () {
+    var cls = trak.className.split('-').pop();
+    cls > 6 ? cls = 0 : cls++;
 
-        step.innerHTML = cls;
-        trak.className = 'progress-' + cls;
-    });
+    step.innerHTML = cls;
+    trak.className = 'progress-' + cls;
+});
 
-    prev.addEventListener('click', function(){
-        var cls = trak.className.split('-').pop();
-        cls < 1 ? cls = 7 : cls--;
+prev.addEventListener('click', function () {
+    var cls = trak.className.split('-').pop();
+    cls < 1 ? cls = 7 : cls--;
 
-        step.innerHTML = cls;
-        trak.className = 'progress-' + cls;
-    });
+    step.innerHTML = cls;
+    trak.className = 'progress-' + cls;
+});
+
 // }
 
 
@@ -48,34 +48,35 @@ function signIn() {
 
     let username = document.getElementById("login__username");
     let password = document.getElementById("login__password");
-    alert(username.value + " " + password.value);
-    //
-    // fetch('', {
-    //     method: 'post',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //         username: username.value,
-    //         password: password.value,
-    //     })
-    // }).then(
-    //     response => {
-    //         if (response.status == 200) {
-    //             return response.text();
-    //         } else {
-    //             alert("Login Failed!");
-    //         }
-    //     }
-    // ).then(
-    //     text => {
-    //         alert(text);
-    //
-    //         username.value = "";
-    //         password.value = "";
-    //
-    //     }
-    // )
+    // alert(username.value + " " + password.value);
+
+    fetch('login', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: username.value,
+            password: password.value,
+        })
+    }).then(
+        response => {
+            if (response.status == 200) {
+                return response.text();
+            } else {
+                alert("Login Failed!");
+                throw new Error("Login Failed!");
+            }
+        }
+    ).then(
+        text => {
+            alert(text);
+
+            username.value = "";
+            password.value = "";
+
+        }
+    )
 }
 // signin end-----------------------------------------------------------------------------------------------------------
 
@@ -87,40 +88,41 @@ function signUp() {
     let email = document.getElementById("signup__username");
     let password = document.getElementById("signup__password");
 
-    alert(name.value + " " + mobile.value + " " + email.value + " " + password.value);
+    // alert(name.value + " " + mobile.value + " " + email.value + " " + password.value);
 
-    // fetch('sign-up', {
-    //     method: 'post',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //         name: name.value,
-    //         contactNumber: mobile.value,
-    //         username: email.value,
-    //         password: password.value,
-    //     })
-    // }).then(
-    //     response => {
-    //         if (response.status == 200) {
-    //             return response.text();
-    //         } else {
-    //             alert("Registration Failed! Please try again.");
-    //             throw new Error("Registration Failed! Please try again.");
-    //         }
-    //     }
-    // ).then(
-    //     text => {
-    //
-    //         alert(text);
-    //
-    //         name.value = "";
-    //         mobile.value = "";
-    //         email.value = "";
-    //         password.value = "";
-    //
-    //     }
-    // )
+    fetch('signup', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: name.value,
+            mobileNumber: mobile.value,
+            username: email.value,
+            password: password.value,
+        })
+    }).then(
+        response => {
+            if (response.status == 200) {
+                return response.text();
+            } else {
+                alert("Registration Failed!");
+                throw new Error("Registration Failed!");
+            }
+        }
+    ).then(
+        text => {
+
+            alert(text);
+
+            name.value = "";
+            mobile.value = "";
+            email.value = "";
+            password.value = "";
+
+        }
+    )
 
 }
+
 // signup end----------------------------------------------------------------------------------------------------

@@ -19,6 +19,7 @@ public class LoginImpl  implements Login {
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public User login(String username, String password) {
 
+        System.out.println(username + " " + password);
         try {
             User user = em.createQuery("SELECT u FROM User u WHERE u.username =:username AND u.password =:password", User.class)
                     .setParameter("username", username)
