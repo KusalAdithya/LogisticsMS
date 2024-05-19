@@ -9,9 +9,13 @@
 </head>
 <body>
 
+<%
+    if (session.getAttribute("login") != null) {
+        response.sendRedirect("/web/addPackage");
+    } else {
+%>
+
 <div class="container-fluid">
-
-
     <div class="grid mt-5">
 
         <h1 class="text-center">Log In</h1>
@@ -66,6 +70,9 @@
 
 
 </div>
+<%
+    }
+%>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 <script src="assets/js/script.js"></script>
 </body>

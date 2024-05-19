@@ -75,9 +75,12 @@ function signIn() {
             username.value = "";
             password.value = "";
 
+            window.location.href = "/web/addPackage";
+
         }
     )
 }
+
 // signin end-----------------------------------------------------------------------------------------------------------
 
 // signup ----------------------------------------------------------------------------------------------------
@@ -120,9 +123,58 @@ function signUp() {
             email.value = "";
             password.value = "";
 
+            window.location.href = "/web/login";
         }
     )
 
 }
 
 // signup end----------------------------------------------------------------------------------------------------
+
+// add package --------------------------------------------------------------------
+function addPackage() {
+
+    let packageId = document.getElementById("package_id");
+     let customerName = document.getElementById("customer_name");
+    let customerMobile = document.getElementById("customer_mobile");
+    let address = document.getElementById("address");
+    let city = document.getElementById("city");
+    let packageWeight = document.getElementById("package_weight");
+
+    // alert(packageId.value + " " + customerName.value + " " + customerMobile.value + " " + address.value + " " + city.value + " " + packageWeight.value);
+
+
+    fetch('addPackage', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            packageId: packageId.value,
+            customerName: customerName.value,
+            customerMobile: customerMobile.value,
+            address: address.value,
+            city: city.value,
+            packageWeight: packageWeight.value
+        })
+    }).then(
+        response => {
+            if (response.status == 200) {
+                return response.text();
+            } else if (response.status == 401) {
+                alert("Unauthorized Access!");
+                throw new Error("Unauthorized Access!");
+            } else {
+                alert("Package Adding Failed!");
+                throw new Error("Package Adding Failed!");
+            }
+        }
+    ).then(
+        text => {
+            alert(text);
+            window.location.href = "/web/addPackage";
+        }
+    )
+}
+
+// add package end ----------------------------------------------------------------

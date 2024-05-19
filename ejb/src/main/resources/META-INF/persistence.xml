@@ -5,6 +5,11 @@
         <jta-data-source>jdbc/logistics_db</jta-data-source>
         <class>com.waka.entity.User</class>
         <class>com.waka.entity.UserType</class>
+        <class>com.waka.entity.Routes</class>
+        <class>com.waka.entity.City</class>
+        <class>com.waka.entity.Package</class>
+        <class>com.waka.entity.PackageStatus</class>
+        <class>com.waka.entity.RouteCondition</class>
 
         <properties>
             <property name="jakarta.persistence.schema-generation.database.action" value="create"/>

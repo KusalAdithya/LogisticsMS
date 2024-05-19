@@ -10,7 +10,19 @@
 </head>
 <body>
 
+<%
+    if (session.getAttribute("login") == null) {
+        response.sendRedirect("/web/login");
+
+    } else {
+%>
+
 <div class="container-fluid">
+
+    <%--header--%>
+    <%@include file="header.jsp"%>
+    <!-- header End -->
+
     <div class="row text-center align-content-center justify-content-center mt-5">
         <div class="col-6">
             <h1 class="text-center">Routes Data</h1>
@@ -47,6 +59,9 @@
     </div>
 </div>
 
+<%
+    }
+%>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 <script src="assets/js/script.js"></script>
